@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bioquímica y Medio Ambiente</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header>
+  <h1>Bioquímica y Medio Ambiente</h1>
+  <p>Juan Diego Sánchez • Elizabeth Castillo • Sofía Solano</p>
+
+  <nav>
+    <a href="#intro">Introducción</a>
+    <a href="#objetivos">Objetivos</a>
+    <a href="#metodologia">Metodología</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#graficos">Gráficos</a>
+    <a href="#evidencias">Evidencias</a>
+    <a href="#conclusiones">Conclusiones</a>
+  </nav>
+</header>
+
+<section id="intro">
+  <h2>Introducción</h2>
+  <p>Este proyecto analiza la capacidad de supervivencia de Escherichia coli frente a condiciones extremas similares a las del espacio.</p>
+</section>
+
+<section id="objetivos">
+  <h2>Objetivos</h2>
+
+  <h3>General</h3>
+  <p>Analizar la resistencia de las bacterias frente a condiciones extremas.</p>
+
+  <h3>Específicos</h3>
+  <ul>
+    <li>Identificar cómo reaccionan las bacterias al calor y al frío.</li>
+    <li>Observar cambios en crecimiento y supervivencia.</li>
+    <li>Comprender la resistencia bacteriana mediante el experimento.</li>
+  </ul>
+</section>
+
+<section id="metodologia">
+  <h2>Metodología</h2>
+  <p>Se inoculó Escherichia coli en placas de Petri y se expusieron durante 24 horas a diferentes condiciones de temperatura y oxígeno.</p>
+</section>
+
+<section id="resultados">
+  <h2>Resultados</h2>
+  <p>Se observó crecimiento en condiciones cercanas a la temperatura ambiente; las temperaturas extremas inhibieron el crecimiento.</p>
+</section>
+
+<section id="graficos">
+  <h2>Gráficos</h2>
+  <canvas id="tempChart"></canvas>
+  <canvas id="growthChart"></canvas>
+</section>
+
+<section id="evidencias">
+  <h2>Evidencias fotográficas</h2>
+  <img src="image1.jpeg" class="foto" alt="Evidencia 1">
+  <img src="image2.jpeg" class="foto" alt="Evidencia 2">
+  <img src="image3.jpeg" class="foto" alt="Evidencia 3">
+</section>
+
+<section id="conclusiones">
+  <h2>Conclusiones</h2>
+  <ul>
+    <li>Las temperaturas extremas afectaron el crecimiento bacteriano.</li>
+    <li>Se logró evaluar la supervivencia de E. coli.</li>
+    <li>La radiación UV no impidió completamente el crecimiento.</li>
+  </ul>
+</section>
+
+<script>
+new Chart(document.getElementById('tempChart'), {
+  type: 'bar',
+  data: {
+    labels: ['UV','Refrigerador','Congelador','Inc. O2','Inc. sin O2','Mini Inc.','Ultra baja','Mesa'],
+    datasets: [{
+      label: 'Temperatura (°C)',
+      data: [27.5,3.6,-12.5,37,37,60,-71.3,27.5],
+      backgroundColor: 'rgba(0, 51, 160, 0.7)',
+      borderColor: '#0033a0',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: { beginAtZero: true }
+    }
+  }
+});
+
+new Chart(document.getElementById('growthChart'), {
+  type: 'bar',
+  data: {
+    labels: ['UV','Refrigerador','Congelador','Inc. O2','Inc. sin O2','Mini Inc.','Ultra baja','Mesa'],
+    datasets: [{
+      label: 'Crecimiento (0-2)',
+      data: [2,0,0,1,0,0,0,2],
+      backgroundColor: 'rgba(255, 204, 0, 0.7)',
+      borderColor: '#ffcc00',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: { beginAtZero: true }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
